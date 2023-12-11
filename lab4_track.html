@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Your Lakme Order</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+        }
+
+        .order-tracking-container {
+            width: 60%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+            padding: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        h1, p, input, button {
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color:crimson;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: crimson;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Example of a simple animation for the tracking result */
+        .tracking-result {
+            display: none;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="order-tracking-container">
+        <h1>Track Your Lakme Order</h1>
+        <p>Enter your order number to track your Lakme order:</p>
+        <input type="text" id="orderNumber" placeholder="Order Number">
+        <button onclick="trackOrder()">Track Order</button>
+
+        <!-- Tracking Result Section (Hidden by default) -->
+        <div class="tracking-result" id="trackingResult">
+            <h2>Order Status</h2>
+            <p>Your Lakme order with Order Number <strong id="displayOrderNumber"></strong> is <strong id="orderStatus"></strong>.</p>
+        </div>
+    </div>
+
+    <script>
+        function trackOrder() {
+            // Example: Fetch order status from a server/database based on the order number
+            // For demonstration purposes, we'll simulate a successful response with a setTimeout
+            setTimeout(function () {
+                var orderNumber = document.getElementById('orderNumber').value;
+                var trackingResult = document.getElementById('trackingResult');
+                var displayOrderNumber = document.getElementById('displayOrderNumber');
+                var orderStatus = document.getElementById('orderStatus');
+
+                // Replace these values with actual order data
+                displayOrderNumber.textContent = orderNumber;
+                orderStatus.textContent = "Shipped"; // Example status
+
+                // Show the tracking result with animation
+                trackingResult.style.display = 'block';
+            }, 1000); // Simulating a server response delay
+        }
+    </script>
+</body>
+</html>

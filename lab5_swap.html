@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Numbers</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color:lightpink;
+        }
+
+        h2 {
+            color:black;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 10px;
+            color:black;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: black;
+            color: white;
+        }
+        button:hover{
+            background-color: pink;
+            color: black;
+        }
+        #submit{
+            border: 1px;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 20px;
+            margin-top: 20%;
+           
+            
+          }
+    </style>
+</head>
+<body>
+
+    <h2>Swap Numbers</h2>
+    <br>
+    <br>
+
+    <label for="num1">Enter Number 1:</label>
+    <input type="text" id="num1">
+
+    <br><br>
+
+    <label for="num2">Enter Number 2:</label>
+    <input type="text" id="num2">
+
+    <br><br>
+
+    <button onclick="swapNumbers()">Swap Numbers</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function swapNumbers() {
+            // Get input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // Check if the input is valid numbers
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById("result").innerText = "Please enter valid numeric values.";
+            } else {
+                // Swap numbers using a temporary variable
+                var temp = num1;
+                num1 = num2;
+                num2 = temp;
+
+                // Display swapped numbers in the HTML
+                document.getElementById("result").innerText = "Swapped Numbers: Number 1: " + num1 + ", Number 2: " + num2;
+            }
+        }
+    </script>
+     <button type="submit" id="submit" ><a href="lab5_factorial.html">next</a></button>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Day and Time</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color:black;
+        }
+
+        h2 {
+            color:white;
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 10px;
+            color: white;
+        }
+        #submit{
+            border: 1px;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 20px;
+            
+           
+            
+          }
+    </style>
+</head>
+<body>
+
+    <h2><i>Current Day and Time</i></h2>
+    <br>
+    <br>
+    <br>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function displayDateTime() {
+            // Get the current date and time
+            var currentDate = new Date();
+            var dayOfWeek = currentDate.toLocaleDateString('en-US', { weekday: 'long' });
+            var hours = currentDate.getHours();
+            var minutes = currentDate.getMinutes();
+            var seconds = currentDate.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            // Convert hours to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12'
+
+            // Display the result
+            var resultText = "Today is: " + dayOfWeek + ".\n";
+            resultText += "Current time is: " + hours + " " + ampm + " : " + (minutes < 10 ? '0' : '') + minutes + " : " + (seconds < 10 ? '0' : '') + seconds;
+            
+            document.getElementById("result").innerText = resultText;
+        }
+
+        // Call the function on page load
+        displayDateTime();
+    </script>
+
+</body>
+</html>

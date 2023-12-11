@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color:white;
+
+        }
+
+        h2 {
+            color:black;
+        }
+
+        input {
+            padding: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: black;
+            color: aqua;
+        }
+        button:hover {
+            background-color: aqua;
+            color: black;
+
+        }
+
+        .result {
+            font-size: 20px;
+            margin-top: 10px;
+            color: black;
+        }
+        #submit{
+            border: 1px;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 20px;
+            margin-top: 20%;
+           
+            
+          }
+    </style>
+</head>
+<body>
+
+    <h2>Factorial Calculator</h2>
+    <br>
+    <br>
+
+    <label for="number">Enter a number:</label>
+    <input type="number" id="number">
+
+    <br><br>
+
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+
+    <div class="result" id="result"></div>
+
+    <script>
+        function calculateFactorial() {
+            // Get the input value
+            var inputNumber = parseInt(document.getElementById("number").value);
+
+            // Check if the input is a valid number
+            if (isNaN(inputNumber) || inputNumber < 0) {
+                document.getElementById("result").innerText = "Please enter a non-negative integer.";
+            } else {
+                // Calculate the factorial
+                var factorial = 1;
+                for (var i = 1; i <= inputNumber; i++) {
+                    factorial *= i;
+                }
+
+                // Display the result
+                document.getElementById("result").innerText = "Factorial of " + inputNumber + " is: " + factorial;
+            }
+        }
+    </script>
+     <button type="submit" id="submit" ><a href="lab5_time.html">next</a></button>
+
+</body>
+</html>

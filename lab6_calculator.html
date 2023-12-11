@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylized Calculator</title>
+    <style>
+       body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+   
+}
+
+#calculator {
+    width: 300px;
+    background-color:black;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#display {
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 1.5em;
+    color: #fff;
+    background-color: #000000;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(58, 4, 58);
+}
+
+button {
+    width: 25%;
+    height: 60px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 1.2em;
+    color: #fff;
+    background-color:rgb(27, 7, 10);
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:active {
+    background-color:rgb(110, 4, 20) ;
+    transform: scale(1);
+}
+
+button.double {
+    width: 50%;
+}
+
+button.operation {
+    background-color: rgb(226, 8, 44);
+}
+
+button.equals {
+    background-color: rgb(126, 44, 64);
+}
+
+button.clear {
+    background-color: #dc3545;
+}
+
+button:hover {
+    background-color: rgb(213, 114, 134);
+    transform: scale(1.1);
+}
+
+    </style>
+</head>
+<body>
+
+    <div id="calculator">
+        <input type="text" id="display" disabled>
+        <button onclick="appendToDisplay('7')">7</button>
+        <button onclick="appendToDisplay('8')">8</button>
+        <button onclick="appendToDisplay('9')">9</button>
+       
+
+        <button onclick="appendToDisplay('4')">4</button>
+        <button onclick="appendToDisplay('5')">5</button>
+        <button onclick="appendToDisplay('6')">6</button>
+       
+
+        <button onclick="appendToDisplay('1')">1</button>
+        <button onclick="appendToDisplay('2')">2</button>
+        <button onclick="appendToDisplay('3')">3</button>
+        <button class="clear" onclick="clearDisplay()">C</button>
+        
+
+        <button class="double" onclick="appendToDisplay('0')">0</button>
+        <button class="operation" onclick="appendToDisplay('.')">.</button>
+        <button class="equals" onclick="calculate()">=</button>
+        <button class="operation" onclick="appendToDisplay('+')">+</button>
+        <button class="operation" onclick="appendToDisplay('/')">/</button>
+        <button class="operation" onclick="appendToDisplay('*')">*</button>
+        <button class="operation" onclick="appendToDisplay('-')">-</button>
+       
+    </div>
+
+   <!-- HTML remains unchanged -->
+
+<script>
+    function appendToDisplay(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        try {
+            const result = Function('return ' + document.getElementById('display').value)();
+            if (isNaN(result) || !isFinite(result)) {
+                throw new Error('Invalid expression');
+            }
+            document.getElementById('display').value = result;
+        } catch (error) {
+            document.getElementById('display').value = 'Error';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Academic Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: darkblue;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            display: block;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color:darkblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>ACADEMIC DETAILS</h1>
+    <form action="lab3_parentdetails.html">
+        <label for="pschool">Name of Previous School:</label>
+        <input type="text" id="pschool" name="pschool">
+
+        <label for="grade">Enter Your Highest Education:</label>
+        <input type="text" id="grade" name="grade">
+
+        <label for="mark">Enter Total Percentage:</label>
+        <input type="number" id="mark" name="mark" min="0" max="100">
+
+        <button type="submit">Next</button>
+    </form>
+</body>
+</html>

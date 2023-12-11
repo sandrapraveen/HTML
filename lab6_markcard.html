@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marks Card</title>
+    <style>
+        body {
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            margin: 50px;
+            background-color: rgba(255, 188, 199, 0.615);
+        }
+
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-radius: 20px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 5px solid rgba(66, 0, 11, 0.345);
+            border-radius: 10px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            color: black;
+        }
+        button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border: 2px solid rgb(39, 2, 14);
+    border-radius: 5px;
+    background-color: rgb(39, 2, 14);
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+button:hover {
+    background-color:rgb(175, 0, 55);
+    border-color: rgb(175, 0, 55);
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <h1>Marks Card</h1>
+    <br>
+    <br>
+
+    <table>
+        <tr>
+            <th>Subject</th>
+            <th>Marks</th>
+        </tr>
+        <tr>
+            <td>Subject 1</td>
+            <td><input type="number" id="subject1" /></td>
+        </tr>
+        <tr>
+            <td>Subject 2</td>
+            <td><input type="number" id="subject2" /></td>
+        </tr>
+        <tr>
+            <td>Subject 3</td>
+            <td><input type="number" id="subject3" /></td>
+        </tr>
+        <tr>
+            <td>Total</td>
+            <td id="total"></td>
+        </tr>
+        <tr>
+            <td>Average</td>
+            <td id="average"></td>
+        </tr>
+        <tr>
+            <td>Result</td>
+            <td id="result"></td>
+        </tr>
+    </table>
+
+    <button onclick="calculateMarks()">Calculate</button>
+
+    <script>
+        function calculateMarks() {
+            const subject1 = parseFloat(document.getElementById('subject1').value) || 0;
+            const subject2 = parseFloat(document.getElementById('subject2').value) || 0;
+            const subject3 = parseFloat(document.getElementById('subject3').value) || 0;
+    
+            // Validation: Ensure each subject's marks are between 0 and 100
+            if (subject1 < 0 || subject1 > 100 || subject2 < 0 || subject2 > 100 || subject3 < 0 || subject3 > 100) {
+                alert("Marks for each subject should be between 0 and 100");
+                return;
+            }
+    
+            const total = subject1 + subject2 + subject3;
+    
+            // Validation: Ensure the total marks do not exceed 300
+            if (total > 300) {
+                alert("Total marks should not exceed 300");
+                return;
+            }
+    
+            const average = total / 3;
+    
+            document.getElementById('total').textContent = total;
+            document.getElementById('average').textContent = average.toFixed(2);
+    
+            // Assuming passing marks as 40 for each subject
+            const passMarks = 40;
+            const result = (subject1 >= passMarks && subject2 >= passMarks && subject3 >= passMarks) ? 'Pass' : 'Fail';
+    
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

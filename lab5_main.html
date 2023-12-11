@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>simple calculator</title>
+        <style>
+            body{
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                text-align: center;
+                margin-top: 50px;
+                background-color: black;
+
+            }
+            h2{
+                color: aliceblue;
+            }
+            input{
+                padding: 10px;
+                font-size: 16px;
+                margin:5px;
+                border: 1px solid white;
+                border-radius: 5px;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+            }
+            button{
+                padding: 12px;
+                font-size: 18px;
+                cursor:pointer;
+                background-color: white;
+                color:pink;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            button:hover {
+                background-color:hotpink;
+        
+                 box-shadow: 0 0 5px hotpink,
+                0 0 25px hotpink,
+                0 0 50px hotpink ,
+                0 0 100px hotpink,
+                0 0 200px hotpink ;
+                -webkit-box-reflect: below 1px linear-gradient(transparent ,#0005);
+            }
+
+            #result {
+            font-size: 20px;
+            margin-top: 10px;
+            color: hotpink;
+          }
+          #submit{
+            border: 1px;
+            border-radius: 5px;
+            padding: 5px;
+            font-size: 20px;
+            margin-top: 20%;
+           
+            
+           
+            
+          }
+        </style>
+
+    </head>
+    <body>
+        <h2><i>simple calculator </i></h2>
+        <br>
+        <br>
+
+        <input type="text" id="num1" placeholder="enter number 1">
+        <input type="text" id="num2" placeholder="enter number 2">
+
+        <br>
+        <br>
+        <br>
+        <button onclick="addNumbers()">Add Numbers</button> 
+        <br>
+        <br>
+        <br>
+
+        <p id="result"></p>
+        <script>
+            function  addNumbers(){
+
+            //get input values
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            // validation
+            if(isNaN(num1)||isNaN(num2)){
+                document.getElementById("result").innerText="enter valid number";
+
+            }
+            else{
+                var sum=num1+num2;
+                document.getElementById("result").innerText="the sum is:"+sum ;
+            }
+        }
+
+        </script>
+        <button type="submit" id="submit" ><a href="lab5_print.html">next</a></button>
+        </body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lakme Product</title>
+    <style>
+       body {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url(lab4_bg.jpg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the content takes at least the full height of the viewport */
+}
+h1{
+    color: black;
+    text-align: center;
+}
+
+#main-content {
+    flex: 1; /* Allow the main content to take up available space */
+    padding-left: 25%;
+   background-image: url(lab4_bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+}
+
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    
+}
+
+th {
+    padding: 5px;
+    text-align: center;
+}
+
+img {
+    
+    padding-left: 35%;
+    border-radius: 8px;
+    display: block;
+
+    
+}
+
+/* Notification styling */
+#cartNotification {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: crimson;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1000;
+    transition: opacity 0.5s ease;
+}
+
+#cartNotification.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Footer styling */
+footer {
+    background-color: black;
+    color: crimson;
+    padding: 0;
+    text-align: center;
+    margin:0; 
+}
+#image{
+    text-align: center;
+}
+
+
+    </style>
+    <script>
+        function addToCart(product, price) {
+            // Your existing addToCart function
+
+            // Display the notification
+            var notification = document.getElementById('cartNotification');
+            notification.style.display = 'block';
+
+            // Hide the notification after 2 seconds
+            setTimeout(function() {
+                notification.style.display = 'none';
+            }, 2000);
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Produts!</h1>
+    <div id="main-content">
+    <table> 
+        <thead>
+            <tr>
+                <th>LAKMÉ DEW DRAMA SERUM </th>  
+            </tr>
+            <tr>
+                <th id="image" ><img src="lab4_serum.webp" height="30%", width="30%"> </th>
+            </tr>
+            <tr>
+                <th> ₹249 </th>
+            </tr>
+            <tr>
+                <th> <a href="lab4_serum.mp4" target="_blank">Watch Video</a></th>
+
+            </tr>
+            <tr>
+                <th><button onclick="addToCart('LAKMÉ DEW DRAMA SERUM ', 249)">Add to Cart</button></th>
+
+            </tr>
+        </thead>
+
+    </table>
+
+    <table> 
+        <thead>
+            <tr>
+                <th>LAKMÉ BLUSH & GLOW STRAWBERRY FRESHNESS GEL FACE WASH</th>  
+            </tr>
+            <tr>
+                <th id="image"><img src="lab4_matteprimer.webp" height="50%"  width="40%"></th>
+            </tr>
+            <tr>
+                <th> ₹550  </th>
+            </tr>
+            <tr>
+                <th> <a href="lab4_matteprim.webp" target="_blank">Watch Video</a></th>
+
+            </tr>
+            <tr>
+                <th><button onclick="addToCart('LAKMÉ 9 TO 5 PRIMER + MATTE PERFECT COVER FOUNDATION', 550)">Add to Cart</button></th>
+
+            </tr>
+        </thead>
+
+    </table>
+
+    <table> 
+        <thead>
+            <tr>
+                <th>LAKMÉ LUMI CREAM </th>  
+            </tr>
+            <tr>
+                <th id="image"><img src="lab4_lumi.webp" height="50%"  width="40%"></th>
+            </tr>
+            <tr>
+                <th> ₹299  </th>
+            </tr>
+            <tr>
+                <th> <a href="lab4_lumi.mp4" target="_blank">Watch Video</a></th>
+
+            </tr>
+            <tr>
+                <th><button onclick="addToCart('LAKMÉ LUMI CREAM', 299)">Add to Cart</button></th>
+
+            </tr>
+        </thead>
+
+    </table>
+</div>
+    
+
+    <!-- Notification for "Added to Cart" -->
+    <div id="cartNotification">Added to Cart!</div>
+    <footer>
+        <p id="footer">&copy; 2023 Lakme. All rights reserved.</p>
+     </footer>
+
+</body>
+</html>
