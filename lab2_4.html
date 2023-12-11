@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FormPage</title>
+        <style>
+            body {
+                background-image: url(food_5.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: black;
+            }
+            fieldset{
+                width: fit-content;
+            }
+            .spec{
+                float: right;
+            }
+            .specs{
+                float: left;
+            }
+            
+            fieldset{
+                border-color: black;
+                color: antiquewhite;
+                border-radius: 2%;
+                float: inline-start;
+            }
+            legend{
+                font-size: larger;
+            }
+            h5 {
+                color:black
+            }
+            label{
+                color: black;
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+            }
+        </style>
+    </head>
+    <body style="color: black;">
+        <fieldset>
+            <legend style="color: black;"><b><u>Registration Form</u></b></legend>
+            <form action="lab2_2.html">
+                <label><b>Name:&nbsp;</b></label>
+                <input type="text" placeholder="First Name" required>&nbsp;&nbsp;
+                <input type="text" placeholder="Second Name"><br><br>
+                <label><b>Date-of-Birth:</b></label>
+                <input type="date" placeholder="DD/MM/YYYY">&nbsp;<br><br>
+                <label><b>Gender:</b></label>
+                <input type="radio" name="gender" class="gender" value="male">Male 
+                <input type="radio" name="gender" class="gender" value="female">Female 
+                <input type="radio" name="gender" class="gender" value="others">Others<br><br>
+                <label><b>Address:</b></label>
+                <textarea name="area" id="area1" cols="30" rows="1">Enter Your Address Here</textarea><br><br>
+                <label><b>Phone Number:</b></label>
+                <select name="drop" id="drop1">
+                    <option value="+91">+91</option>
+                    <option value="+90">+90</option>
+                    <option value="+93">+93</option>
+                    <option value="+355">+355</option>
+                    <option value="+213">+213</option>
+                    <option value="+376">+376</option>
+                    <option value="+54">+54</option>
+                    <option value="+51">+51</option>
+                    <option value="+43">+43</option>
+                    <option value="880">+880</option>
+                    <option value="+32">+32</option>
+                </select>
+                &nbsp;<input type="number" placeholder="Phone Number"><br><br>
+                <label><b>Alternate Phone Number:</b></label>
+                    <select name="drop" id="drop1">
+                        <option value="+91">+91</option>
+                        <option value="+90">+90</option>
+                        <option value="+93">+93</option>
+                        <option value="+355">+355</option>
+                        <option value="+213">+213</option>
+                        <option value="+376">+376</option>
+                        <option value="+54">+54</option>
+                        <option value="+51">+51</option>
+                        <option value="+43">+43</option>
+                        <option value="880">+880</option>
+                        <option value="+32">+32</option>
+                    </select>
+                &nbsp;<input type="number" placeholder="Phone Number"><br><br>
+                <label><b>E-mail:</b></label>
+                <input type="email" placeholder="ex:sadhiuwdh@iwu.com"><br><br>
+                <label><b>Alternate E-mail:</b></label>
+                <input type="email" placeholder="ex:sadhiuwdh@iwu.com"><br><br>
+                <label><b>Qulaification:</b></label>
+                <select name="dropssss" id="dropssss1">
+                    <option value="select">Select</option>
+                    <option value="tenth">10th or equivalent</option>
+                    <option value="plustwo">+2 or equivalent</option>
+                    <option value="ug">Undergraduate or equivalent</option>
+                    <option value="pg">Postgraduate or equivalent</option>
+                    <option value="others">Others</option>
+                </select><br><br>
+                <label><b>Work Experience:</b></label>
+                <select name="drup" id="drups">
+                    <option value="select">Select</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br><br>
+                <label><b>Occupation</b></label>
+                <select name="dropsss" id="dropsss1">
+                    <option value="select">Select</option>
+                    <option value="students">Student</option>
+                    <option value="public">Public-Sector</option>
+                    <option value="private">Private-Sector</option>
+                    <option value="self">Self-Employed</option>
+                    <option value="other">Others</option>
+                </select><br><br>
+                <label><b>Father's Name:</b></label>
+                <input type="text">
+                &nbsp;&nbsp;<label><b>Mother's Name:</b></label>
+                <input type="text"><br><br>
+                <label><b>Nationality:</b></Nationality:b></label>&nbsp;
+                <input type="text" placeholder="ex:Indian"><br><br>
+                <label><b>Religion:</b></label>
+                <input type="text"><br><br>
+                <label><b>Marital Status:</b></Marital></label>
+                <select name="drops" id="drops1">
+                    <option value="select">Select</option>
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="divorce">Divorced</option>
+                    <option value="others">Others</option>
+                </select><br><br>
+                <label><b>ID:</b></label>
+                <select name="dropss" id="dropss1">
+                    <option value="select">Select</option>
+                    <option value="aadhar">Aadhar</option>
+                    <option value="license">Driving-License</option>
+                    <option value="pan">Pan-Card</option>
+                    <option value="voters">Voters-ID</option>
+                </select>
+                <input type="number" placeholder="ID-Number"><br><br>
+                <aside class="specs">
+                    <h4><b><u>Present Address</u></b></h4>
+                    <label><b>City:</b></label>
+                    <input type="text"><br><br>
+                    <label><b>State:</b></label>
+                    <input type="text"><br><br>
+                    <label><b>Zip-Code:</b></label>
+                    <input type="number"><br><br>
+                    <label><b>Country:</b></label>
+                    <input type="text">
+                </aside>
+                <aside class="spec">
+                    <h4><b><u>Permenant Address</u></b></h4>
+                    <label><b>City:</b></label>
+                    <input type="text"><br><br>
+                    <label><b>State:</b></label>
+                    <input type="text"><br><br>
+                    <label><b>Zip-Code:</b></label>
+                    <input type="number"><br><br>
+                    <label><b>Country:</b></label>
+                    <input type="text"><br><br>
+                </aside>
+                <br><br><br><br><br><br><br><br><br><br><br><br>
+                <h3><b><u>Document Uploads</u></b></h3>
+                <label><b>Upload Education Qulaification Documents</b></label>
+                <input type="file" name="fileupload" accept="image/*"><br><br>
+                <label><b>Upload Work Experience Documents</b></label>
+                <input type="file" name="fileupload" accept="image/*"><br><br>
+                <label><b>Uplaod ID Documents:</b></label>
+                <input type = "file" name = "fileupload" accept = "image/*"/><br><br>
+                <label><b>Upload your Photo:</b></label>
+                <input type="file" name="fileupload" accept="image/*"><br><br>
+                <h5><input type="checkbox">I hereby decalre that all the information's provided above is true and I am aware the it <br>
+                     may be used for other purposes.
+                </h5>
+            </form> 
+            <a href="lab2_2.html"><button>Submit</button></a>  
+        </fieldset>
+    </body>
+</html>
